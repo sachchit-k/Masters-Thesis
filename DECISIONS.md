@@ -22,3 +22,4 @@ Settle each before writing the code it affects. Record date and reason. Status: 
 
 ## Notes
 - 2026-10-13 Tooling: all code and Git commits are done in Cursor with Claude Code integrated; CLAUDE.md in repo\ holds the rules Claude Code follows. Process decision, not one of items 1-16.
+- 2026-10-13 Tooling: Git remote is GitHub (sachchit-k/Masters-Thesis, branch main); first commit 6cce445. Process decision, not one of items 1-16.

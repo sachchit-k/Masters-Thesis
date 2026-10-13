@@ -28,3 +28,4 @@ Thesis: "Trigger Words or True Evidence?" Audit of fine-tuned RoBERTa-base disin
 - Flag methodology risks (leakage, WELFake duplicates, near-chance LIAR accuracy).
 - LOG.md: append-only, newest at bottom, 2-4 lines, tag each entry [code] or [doc], update the Status line.
 - Git: commit code, configs, thesis\, LOG.md, DECISIONS.md. Never data, models, outputs, .venv.
+- Git remote: `origin` = github.com/sachchit-k/Masters-Thesis (branch `main`). Git user.name/email are set per repo (not --global). Credentials sit in the Windows profile on C: (known exception to Rule 0).
