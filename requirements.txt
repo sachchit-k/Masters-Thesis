@@ -1,0 +1,14 @@
+# Direct dependencies. torch/torchvision-free: install torch separately from the CUDA index (see scripts\setup_env.ps1).
+# Exact versions are frozen to requirements.lock.txt by the setup script after a successful install.
+torch>=2.5,<3          # CUDA 12.x build from https://download.pytorch.org/whl/cu126
+transformers>=4.46
+captum>=0.7
+sentence-transformers>=3.0
+spacy>=3.7
+nltk>=3.9
+scipy>=1.13
+pandas>=2.2
+numpy>=1.26,<3
+scikit-learn>=1.5
+accelerate>=1.0
+datasets>=3.0
