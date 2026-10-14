@@ -24,9 +24,9 @@ Read at the start of every session: repo\LOG.md (status line and last entries), 
 | Step | Name | State |
 |------|------|-------|
 | 1 | Machine setup | DONE |
-| 2 | Repo, environment, smoke test | NEXT |
-| 3 | Documentation setup (thesis\ skeleton) | DONE (not yet committed) |
-| 4 | Data preparation and first decisions | pending |
+| 2 | Repo, environment, smoke test | DONE |
+| 3 | Documentation setup (thesis\ skeleton) | DONE |
+| 4 | Data preparation and first decisions | NEXT |
 | 5 | Fine-tune target models | pending |
 | 6 | Attribution extraction (IG) | pending |
 | 7 | Attribution sensitivity (RQ3) | pending |

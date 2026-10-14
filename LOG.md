@@ -1,16 +1,18 @@
 ﻿# Project Log
+
 Append-only, newest entry at the bottom. 2-4 lines each. Add "Lost time:" only when something cost time. Tag each entry [code] or [doc]; one log for both.
 
 **Status:** Step 1 (machine) done. Documentation setup done. Step 2 done: environment on D: built, smoke test 6/6 passed, first commit made from Cursor. Next: dataset download (LIAR, WELFake) and DECISIONS.md items 1-4. No experiments started.
 
 ## 2026-10-13
+
 - Step 1 done: caches and temp redirected to D:\cache (HF, torch, pip, uv, NLTK, CUDA, MPL, XDG, npm). GPU GTX 1650 Ti visible (about 3.5 GB VRAM free at idle). C: 58.3 GB free. RAM 23.8 GB total, 13.5 GB free. Sleep disabled on AC.
 - Lost time: first cache setup missed NLTK, CUDA, XDG and npm, added after an audit.
 - Found an old prototype in D:\2026-UNI-KOB\thesis\Code (20 July, no Git, 43,790 files, 1.55 GB). Not reused, treated as an archive.
 - Decision: project restarted in D:\Masters_Thesis_Sachchit with repo, data, models and outputs as siblings.
 - [doc] Read the proposal (Thesis__Sachchit_Kolekar_Aug_23_Proposal.pdf, 18 pages): 3 RQs, 4 objectives, 6-chapter target structure, timeline Sep 2026 to Jan 2027 (fine-tuning Sep, IG Oct, mutation engine Nov, experiments and results skeleton Dec, writing and submission Jan).
 - [doc] Read Sample_Master_Thesis.pdf (118 pages, Word, A4, Koblenz) as the model for structure: front matter order (title page, Erklaerung, AI-use declaration, acknowledgement, abstract, lists), headings numbered to 3 levels, author-year citations, URL footnotes with access date, appendices. Official template comes later.
-- [doc] Created repo\thesis\: README.md, 00_front_matter to 07_appendix as Markdown (convertible to Word or LaTeX later), references.bib with the 18 proposal references (authors as initials, exactly as in the proposal; check against papers). Test build with pandoc to .docx ran. Not committed to Git yet.
+- [doc] Created repo\thesis README.md, 00_front_matter to 07_appendix as Markdown (convertible to Word or LaTeX later), references.bib with the 18 proposal references (authors as initials, exactly as in the proposal; check against papers). Test build with pandoc to .docx ran. Not committed to Git yet.
 - Decision [doc]: draft in Markdown now, final template later; reuse proposal text where marked [REUSE]; every number in the thesis comes from outputs\ through scripts.
 - Decision [doc]: one LOG.md for code and documentation (tagged), DECISIONS.md stays separate for methodology choices.
 - Deferred by user: AI-use declaration wording, personal details (matriculation number, degree name, submission date, German abstract, page limit), and all 16 open items in DECISIONS.md. Preparation phase only; none of these block Step 2.
@@ -18,12 +20,19 @@ Append-only, newest entry at the bottom. 2-4 lines each. Add "Lost time:" only w
 - [code] Step 2 partly done: wrote CLAUDE.md (project rules), requirements.txt (version ranges; exact pins go to requirements.lock.txt after install), scripts\setup_env.ps1 (uv .venv on D:, torch cu126), scripts\smoke_test.py (GPU, RoBERTa fp16, Captum IG 50 steps with internal_batch_size=5, BERT MLM, Sentence-Transformer, spaCy; no datasets), scripts\finish_step2.ps1 (commit + ignore check). Not yet run: environment, smoke test, Git commit.
 - Lost time: the shell on the PC did not start from the cloud session, so nothing could be executed there.
 - [code] Decision: all coding and all Git commits go through Cursor, with Claude Code integrated in Cursor, for the rest of the project. Commits are made from Cursor (Source Control panel or its terminal); CLAUDE.md in repo\ is what Claude Code reads for the rules. Recorded in DECISIONS.md Notes.
-- [code] RULE (project prerequisite): everything goes to drive D (environments, Python installs, caches, models, data, outputs, temp). Added as Rule 0 in CLAUDE.md and as a note in DECISIONS.md. Exception found: Claude Code's native installer put claude.exe on C:\Users\acer\.local\bin and its settings go to C:\Users\acer\.claude (small, but against the rule); relocation to be decided.
+- [code] RULE (project prerequisite): everything goes to drive D (environments, Python installs, caches, models, data, outputs, temp). Added as Rule 0 in CLAUDE.md and as a note in DECISIONS.md. Exception found: Claude Code's native installer put claude.exe on C:\Users\acerlocal\bin and its settings go to C:\Users\acerclaude (small, but against the rule); relocation to be decided.
 - [code] Claude Code 2.1.296 installed in Cursor (extension + native CLI); PATH entry for the CLI still to be added.
 - [code] Decision: Claude Code moved completely to D: (binary D:\tools\claude\bin, config via CLAUDE_CONFIG_DIR=D:\tools\claude\config, auto-update off, update by re-copying). Script scripts\move_claude_to_D.ps1 copies and sets user env vars; C: copies removed by the user after verification. Not yet run. Cursor itself and its extension folder (including the extension's bundled CLI) are still on C:.
 - [code] Step 2 done: .venv rebuilt with uv-managed Python 3.11 on D:\cache\uv\python (pyvenv.cfg home on D:), installed from requirements.lock.txt (torch 2.14.1+cu126, transformers 5.19.0, captum 0.9.0). Smoke test 6/6 PASS on GTX 1650 Ti (RoBERTa fp16 peak 0.25 GiB, Captum IG 50 steps with internal_batch_size=5 peak 0.27 GiB, BERT MLM and Sentence-Transformer on CPU under no_grad, spaCy POS). First Git commit made from Cursor via scripts\finish_step2.ps1; data, models, outputs, .venv not tracked. Stray .venv and requirements.lock.txt in D:\Masters_Thesis_Sachchit\ were already gone.
 - Lost time: first lock install failed on a uv index conflict (fixed with --index-strategy unsafe-best-match); the first .venv used the Python on C: and had to be rebuilt; a run from the wrong folder created stray files one level up (setup_env.ps1 now switches to repo\ itself).
 
+
+
 ## 2026-10-14
+
 - [doc] Wrote repo\PROJECT_STEPS.md (12-step plan, working rules, decisions checklist) and repo\thesis\WRITING_FLOW.md (thesis writing flow, code-step to chapter mapping, documentation gate after every code step, layout checklist from the sample, revision passes). Documentation now runs in parallel with the code.
 - Observed: proposal timeline (fine-tuning Sep, IG Oct) is about one month ahead of actual progress; timeline to be re-planned in Step 4 against the real submission deadline.
+
+- [doc] First draft of thesis\01_introduction.md from proposal sections 1.1, 1.2, 2.2, 2.3 and 4 (motivation, gap, aim, objectives, RQs, contributions, structure). No results claimed. Open: EU AI Act citation not in references.bib; objectives and contributions to be rewritten in Step 12; Art. 15 wording, "to the best of my knowledge" claim, RQ2 (LeRF only vs Random) and RQ1 (register vs length confound) flagged as CHECK comments in the file. Not committed to Git.
+- [doc] 01_introduction.md: citation keys updated to the new references.bib (e.g. @geirhos2020shortcut, @wan2025truth); all 15 cited keys resolve. Still missing in references.bib: EU AI Act (Regulation (EU) 2024/1689) and the BERT and RoBERTa papers.
+- [doc] 02_background.md restructured with an EXPECTED comment per sub-chapter (what to cover, which sources, length) and text taken only from the proposal (sections 1, 2, 3.2-3.4): benchmarks, shortcut learning, LIME/SHAP, IG with Eq. 1, MoRF/LeRF/Random, perturbation and filters, Table 1 and the three gaps. Placeholders: literature search approach, BERT/RoBERTa description, Article 15. CHECK comments mark proposal claims to verify against sources. Not committed to Git.
