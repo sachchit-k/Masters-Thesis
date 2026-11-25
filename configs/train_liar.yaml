@@ -1,0 +1,19 @@
+# Step 5 fine-tuning, LIAR (DECISIONS rows 1, 2, 4, 16, 18, 19). Settings that depend on the GPU can change after the first run.
+run_name: liar_schemeA_roberta-base_seed42
+dataset: liar
+label_scheme: A            # 1 = true side (true, mostly-true, half-true), 0 = false side
+model_name: roberta-base
+max_length: 512            # row 16: 512 for both datasets; head kept, tail cut; padding per batch
+seed: 42                   # row 2
+epochs: 4
+patience: 2                # early stopping on validation macro-F1
+learning_rate: 2.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+train_batch_size: 32
+grad_accum_steps: 1
+eval_batch_size: 64
+fp16: true
+gradient_checkpointing: false
+bootstrap_resamples: 1000  # row 4: 95% confidence interval on the test score

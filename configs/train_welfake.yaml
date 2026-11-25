@@ -1,0 +1,20 @@
+# Step 5 fine-tuning, WELFake (DECISIONS rows 1, 2, 3 (open), 4, 16, 17). Batch settings are a first guess for a 16 GB GPU.
+run_name: welfake_roberta-base_seed42
+dataset: welfake
+welfake_input: text        # OPEN: title is not used yet (the analysis used text only)
+drop_empty_text: true      # 783 empty texts stay in the split ids but are skipped here and counted (row 3 is open)
+model_name: roberta-base
+max_length: 512
+seed: 42
+epochs: 3
+patience: 1
+learning_rate: 2.0e-5
+weight_decay: 0.01
+warmup_ratio: 0.06
+max_grad_norm: 1.0
+train_batch_size: 8
+grad_accum_steps: 4        # effective batch 32
+eval_batch_size: 32
+fp16: true
+gradient_checkpointing: false   # set true if memory is tight (the laptop's 4 GB needs it)
+bootstrap_resamples: 1000

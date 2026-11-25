@@ -1,0 +1,122 @@
+{
+ "seed": 42,
+ "decisions": "rows 1, 2, 3 (OPEN: all rows kept), 19",
+ "welfake_method": "StratifiedGroupKFold(n_splits=10, shuffle=True, random_state=42): fold 0 = test, fold 1 = val, rest = train; groups = near-duplicate clusters",
+ "cluster_params": {
+  "shingle_words": 5,
+  "min_words": 20,
+  "est_jaccard": 0.8,
+  "minhash_perms": 128,
+  "bands": 16,
+  "minhash_rng_seed": 0
+ },
+ "source_sha256": {
+  "WELFake_Dataset.csv": "665331424230fc452e9482c3547a6a199a2c29745ade8d236950d1d105223773",
+  "liar_dataset/train.tsv": "23ef8cb7ff57b25c941100d0744039cebc595d65a67ea190f72b330a658d8c36",
+  "liar_dataset/valid.tsv": "8dd3d7ed1a11e78ed7df090c9eddb0f91147f895850c78d49dd7b4e88fd09a16",
+  "liar_dataset/test.tsv": "ee41e2c741e0019216952625145af8c4aa8c8d3057ec68284b134267bb845e6f"
+ },
+ "id_hashes": {
+  "liar_train": "d8b100ec8d4ab691f79e62ce803dc9d5eda2295596e02f82f7636ff125f13e3e",
+  "liar_valid": "ed076b663857af5ed6c722a8159f41c7a02b638bb0bc51f03bc3c817b3210a92",
+  "liar_test": "0008ec9c1bdf9dd3f1c7331bab68d94b6fd765fe66b4e7f8de7a92633f4b0826",
+  "welfake_train": "03372b5cbaa9d453676ce6c6d4e8747e67d605ec85e36f797241e90b74633ef9",
+  "welfake_val": "471e8e132dc227cdc2b63bcff2f410f19d3fb17728bb5470a3459e468ead5eb2",
+  "welfake_test": "cf348e64bdf8a5df649e65d7fb866e58194ba0f8fbf6e83b35ebab48f64e9946"
+ },
+ "liar": {
+  "train": {
+   "n": 10269,
+   "six_way_counts": {
+    "half-true": 2123,
+    "false": 1998,
+    "mostly-true": 1966,
+    "true": 1683,
+    "barely-true": 1657,
+    "pants-fire": 842
+   },
+   "scheme_A_counts_0_false_side_1_true_side": {
+    "1": 5772,
+    "0": 4497
+   }
+  },
+  "valid": {
+   "n": 1284,
+   "six_way_counts": {
+    "false": 263,
+    "mostly-true": 251,
+    "half-true": 248,
+    "barely-true": 237,
+    "true": 169,
+    "pants-fire": 116
+   },
+   "scheme_A_counts_0_false_side_1_true_side": {
+    "1": 668,
+    "0": 616
+   }
+  },
+  "test": {
+   "n": 1283,
+   "six_way_counts": {
+    "half-true": 267,
+    "false": 250,
+    "mostly-true": 249,
+    "barely-true": 214,
+    "true": 211,
+    "pants-fire": 92
+   },
+   "scheme_A_counts_0_false_side_1_true_side": {
+    "1": 727,
+    "0": 556
+   }
+  },
+  "twins_across_official_splits": {
+   "exact": {
+    "valid_rows_with_twin_in_train": 7,
+    "test_rows_with_twin_in_train": 5,
+    "test_rows_with_twin_in_train_or_valid": 5
+   },
+   "near": {
+    "valid_rows_with_twin_in_train": 7,
+    "test_rows_with_twin_in_train": 6,
+    "test_rows_with_twin_in_train_or_valid": 6
+   }
+  }
+ },
+ "welfake": {
+  "train": {
+   "n": 57708,
+   "share_of_rows": 0.8,
+   "label0_real": 28023,
+   "label1_fake": 29685,
+   "share_label1": 0.5144,
+   "empty_text_rows": 629,
+   "rows_in_duplicate_clusters": 14347
+  },
+  "val": {
+   "n": 7213,
+   "share_of_rows": 0.1,
+   "label0_real": 3502,
+   "label1_fake": 3711,
+   "share_label1": 0.5145,
+   "empty_text_rows": 75,
+   "rows_in_duplicate_clusters": 1791
+  },
+  "test": {
+   "n": 7213,
+   "share_of_rows": 0.1,
+   "label0_real": 3503,
+   "label1_fake": 3710,
+   "share_label1": 0.5143,
+   "empty_text_rows": 79,
+   "rows_in_duplicate_clusters": 1791
+  },
+  "clusters": {
+   "groups": 62343,
+   "groups_with_2plus_rows": 8138,
+   "largest_group": 58,
+   "empty_text_rows_total": 783
+  }
+ },
+ "note": "ids only; LIAR scheme A (DECISIONS row 19) is applied at load time; WELFake label 0 = real, 1 = fake (row 17); empty-text rows are kept in the ids (row 3 open)"
+}
